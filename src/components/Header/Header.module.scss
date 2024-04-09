@@ -1,20 +1,16 @@
-.header {
-  //border: 1px solid blue;
-  // margin: 20px;
-  color: beige;
-  h1 {
-    //border: 1px solid blue;
-    margin: 0;
-  }
-  h4 {
-    padding-left: 100px;
-  }
-  img {
-    height: 0.7em;
-  }
-  span {
-    color: green;
-    font-size: xxx-large;
-    font-family: cursive;
-  }
+.header_landing {
+  display: flex;
+  flex-direction: column;
+  //border: 1px solid green;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.header_searching {
+  //border: 1px solid red;
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
 }

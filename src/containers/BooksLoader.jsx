@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import BooksGrid from "../components/BooksGrid/BooksGrid";
 import { fetchBooks } from "../services/data-services";
 import LoadingSpinner from "../components/LoadingSpinner/LoadingSpinner";
 import ErrorMessage from "../components/ErrorMessage/ErrorMessage";
 import style from "./BooksLoader.module.scss";
-import PagingSection from "../components/PagingSection/PagingSection";
-import ResultsSelector from "../components/ResultsSelector/ResultsSelector";
+import SearchResults from "../components/SearchResults/SearchResults";
 const BooksLoader = ({ searchTerm }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -49,19 +47,15 @@ const BooksLoader = ({ searchTerm }) => {
       {isError && <ErrorMessage errMsg={errMsg} />}
       {isLoading && <LoadingSpinner />}
       {!isError && !isLoading && booksList && (
-        <>
-          <ResultsSelector
-            options={[10, 20, 30, 40]}
-            onSelect={setNumberOfBooksPerPage}
-            selectedValue={numberOfBooksPerPage}
-          />
-
-          <BooksGrid booksList={booksList} />
-          <PagingSection
-            numberOfPages={numberOfPages}
-            fetchPage={setPageNumber}
-          />
-        </>
+        <SearchResults
+          searchTerm={searchTerm}
+          booksList={booksList}
+          pageNumber={pageNumber}
+          numberOfBooksPerPage={numberOfBooksPerPage}
+          numberOfPages={numberOfPages}
+          setPageNumber={setPageNumber}
+          setNumberOfBooksPerPage={setNumberOfBooksPerPage}
+        />
       )}
     </div>
   );

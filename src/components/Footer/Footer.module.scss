@@ -2,8 +2,10 @@
   text-align: center;
   padding: 5px;
   color: beige;
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  //border: 1px solid red;
+  bottom: 5px;
   background-color: rgba(3, 55, 51, 1);
   width: calc(100vw - 10px);
+  font-size: xx-small;
 }

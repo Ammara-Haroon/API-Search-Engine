@@ -1,6 +1,6 @@
 import React from "react";
 
-const PagingSection = ({ numberOfPages = 10, fetchPage }) => {
+const PageSelector = ({ numberOfPages = 10, fetchPage }) => {
   const pages = Array.from(Array(numberOfPages).keys());
   return (
     <div>
@@ -15,4 +15,4 @@ const PagingSection = ({ numberOfPages = 10, fetchPage }) => {
   );
 };
 
-export default PagingSection;
+export default PageSelector;

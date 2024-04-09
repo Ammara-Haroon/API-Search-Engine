@@ -1,11 +1,14 @@
-.search_bar {
+.bar {
   border-radius: 25px;
   border: 3px solid green;
-  width: fit-content;
   padding: 5px;
-  width: 100%;
   margin: 20px;
-
+  &_landing {
+    width: 100%;
+  }
+  &_searching {
+    min-width: 30%;
+  }
   input {
     border: none;
     background-color: none;

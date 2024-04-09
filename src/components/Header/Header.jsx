@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import style from "./Header.module.scss";
-import eyes from "../../assets/tenor.gif";
-const Header = () => {
+import SearchBar from "../SearchBar/SearchBar";
+import Title from "../Title/Title";
+import { SearchingContext } from "../Context/SearchingContext";
+const Header = ({ updateSearchTerm }) => {
+  const { isLanding } = useContext(SearchingContext);
+  const headerStyleClass = isLanding
+    ? `${style.header_landing}`
+    : `${style.header_searching}`;
+  console.log(headerStyleClass);
   return (
-    <div className={style.header}>
-      <h1>
-        L<img src={eyes} />k<span>4</span>Book
-      </h1>
-      <h4>...lookup for your favourite book online</h4>
+    <div className={headerStyleClass}>
+      <Title />
+      <SearchBar searchForBooks={updateSearchTerm} />
     </div>
   );
 };
