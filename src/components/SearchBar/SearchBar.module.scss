@@ -1,0 +1,28 @@
+.search_bar {
+  border-radius: 25px;
+  border: 3px solid green;
+  width: fit-content;
+  padding: 5px;
+  width: 100%;
+  margin: 20px;
+
+  input {
+    border: none;
+    background-color: none;
+    width: calc(100% - 20px);
+    outline: none;
+    background: none;
+    color: beige;
+    &:placeholder-shown {
+      font-style: italic;
+    }
+    &:focus,
+    &:active {
+      background: transparent;
+    }
+  }
+  button {
+    border: none;
+    background-color: transparent;
+  }
+}
