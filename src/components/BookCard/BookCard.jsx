@@ -1,19 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import style from "./BookCard.module.scss";
+import BookModal from "../BookModal/BookModal";
 const BookCard = ({ book }) => {
+  const [openModal, setOpenModal] = useState(false);
   return (
-    <div className={style.flip_card}>
-      <div className={style.flip_card_inner}>
-        <div className={style.flip_card_front}>
-          <img src={book.image} alt={book.title} />
+    <>
+      {" "}
+      <div className={style.card} onClick={() => setOpenModal(true)}>
+        <div className={style.flip_card}>
+          <div className={style.flip_card_inner}>
+            <div className={style.flip_card_front}>
+              <img src={book.image} alt={book.title} />
+            </div>
+            <div className={style.flip_card_back}>
+              <div className={style.description}>
+                <p>{book.description}</p>
+              </div>
+              {book.description && (
+                <div className={style.arrows}>
+                  <small>&#11167;</small>
+                  <small>&#11165;</small>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-        <div className={style.flip_card_back}>
-          <h2>{book.title}</h2>
-          <p>{book.authors.join(", ")}</p>
-          <p>{book.description}</p>
-        </div>
+
+        <h3 className={style.book}>{book.title}</h3>
+        <small className={style.author}>{book.authors.join(", ")}</small>
+        <p>{/* <button>Add to Cart</button> */}</p>
       </div>
-    </div>
+      {openModal && <BookModal book={book} setOpenModal={setOpenModal} />}
+    </>
   );
 };
 

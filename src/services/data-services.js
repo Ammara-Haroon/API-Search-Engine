@@ -49,6 +49,13 @@ export const fetchBooks = async (
     image: vol.volumeInfo.imageLinks && vol.volumeInfo.imageLinks.thumbnail,
     description: vol.volumeInfo.description,
     title: vol.volumeInfo.title,
+    categories: vol.volumeInfo.categories,
+    pageCount: vol.volumeInfo.pageCount,
+    printType: vol.volumeInfo.printType,
+    publishedDate: vol.volumeInfo.publishedDate,
+    publisher: vol.volumeInfo.publisher,
+    subtitle: vol.volumeInfo.subtitle,
+    previewLink: vol.volumeInfo.previewLink,
   }));
 
   console.log("cleanData", cleanedData);
