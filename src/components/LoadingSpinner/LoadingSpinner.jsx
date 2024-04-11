@@ -5,8 +5,8 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 const LoadingSpinner = () => {
   //return <div className={style.spinner}>LoadingSpinner</div>;
   return (
-    <div>
-      <FontAwesomeIcon icon={faSpinner} />
+    <div className={style.wrapper}>
+      <FontAwesomeIcon className={style.spinner} icon={faSpinner} siz="lg" />
     </div>
   );
 };

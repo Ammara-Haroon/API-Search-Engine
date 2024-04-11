@@ -6,8 +6,12 @@ const ResultsSelector = ({ options, selectedValue, onSelect }) => {
   };
   return (
     <div>
-      <label htmlFor="resultsSelector">Results Per Page :</label>
-      <select onChange={handleSelect} value={selectedValue}>
+      <label htmlFor="resultsSelector">Results Per Page : </label>
+      <select
+        style={{ backgroundColor: "light-grey", color: "black" }}
+        onChange={handleSelect}
+        value={selectedValue}
+      >
         {options.map((option) => (
           <option key={option} value={option}>
             {option}

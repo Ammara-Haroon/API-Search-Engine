@@ -3,28 +3,37 @@ import style from "./SearchResults.module.scss";
 import BooksGrid from "../BooksGrid/BooksGrid";
 import PagingInformation from "../PagingInformation/PagingInformation";
 import PageSelector from "../PageSelector/PageSelector";
+
 const SearchResults = ({
   searchTerm,
   booksList,
-  startIndex,
   numberOfBooksPerPage,
   setNumberOfBooksPerPage,
   totalNumberOfBooks,
   numberOfPages,
   setPageNumber,
+  currentPage,
+  setCurrentPage,
 }) => {
-  console.log(startIndex, startIndex + numberOfBooksPerPage);
+  const startIndex = 1 + currentPage * numberOfBooksPerPage;
+  const endIndex = startIndex + numberOfBooksPerPage - 1;
+  console.log(startIndex, endIndex, totalNumberOfBooks);
   return (
-    <div>
+    <div className={style.results}>
       <PagingInformation
-        stratIndex={startIndex}
-        endIndex={startIndex + numberOfBooksPerPage}
+        startIndex={startIndex}
+        endIndex={endIndex}
         totalNumberOfBooks={totalNumberOfBooks}
         numberOfBooksPerPage={numberOfBooksPerPage}
         setNumberOfBooksPerPage={setNumberOfBooksPerPage}
       />
       <BooksGrid booksList={booksList} searchTerm={searchTerm} />
-      <PageSelector numberOfPages={numberOfPages} fetchPage={setPageNumber} />
+      <PageSelector
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
+        numberOfPages={numberOfPages}
+        fetchPage={setPageNumber}
+      />
     </div>
   );
 };

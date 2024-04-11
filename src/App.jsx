@@ -17,15 +17,17 @@ function App() {
     (searchTerm ? ` ${style.section_searching}` : ` ${style.section_landing}`);
   console.log(pageStyleClass);
   return (
-    <section className={pageStyleClass}>
-      <div className={style.wrapper}>
-        <SearchingContextProvider>
-          <Header updateSearchTerm={updateSearchTerm} />
-        </SearchingContextProvider>
-        <BooksLoader searchTerm={searchTerm} />
-      </div>
+    <>
+      <section className={pageStyleClass}>
+        <div className={style.wrapper}>
+          <SearchingContextProvider>
+            <Header updateSearchTerm={updateSearchTerm} />
+          </SearchingContextProvider>
+          <BooksLoader searchTerm={searchTerm} />
+        </div>
+      </section>
       <Footer />
-    </section>
+    </>
   );
 }
 

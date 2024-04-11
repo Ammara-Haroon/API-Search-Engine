@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "./BookCard.module.scss";
 import BookModal from "../BookModal/BookModal";
+import imageNotFound from "../../assets/image-not-found-icon.png";
 const BookCard = ({ book }) => {
   const [openModal, setOpenModal] = useState(false);
   return (
@@ -10,7 +11,7 @@ const BookCard = ({ book }) => {
         <div className={style.flip_card}>
           <div className={style.flip_card_inner}>
             <div className={style.flip_card_front}>
-              <img src={book.image} alt={book.title} />
+              <img src={book.image || imageNotFound} alt={book.title} />
             </div>
             <div className={style.flip_card_back}>
               <div className={style.description}>

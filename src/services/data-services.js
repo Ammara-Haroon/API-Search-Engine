@@ -37,9 +37,9 @@ export const fetchBooks = async (
       value: maxResults,
     },
   ]);
-  console.log(data);
+  console.log("fetching from", startIndex, maxResults);
   if (data.totalItems === 0) {
-    throw new Error("No books found");
+    throw new Error(`No books found for '${searchTerm}'`);
   }
   //image author title description
 

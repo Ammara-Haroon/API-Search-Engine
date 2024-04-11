@@ -2,38 +2,58 @@
   position: fixed;
   z-index: 2;
   left: 15vw;
-  top: 20vh;
+  top: 10vh;
   width: 70vw;
-  height: 60vh;
+  height: 50vh;
   background-color: black;
   box-sizing: border-box;
   max-width: 750px;
   max-height: 750px;
-  min-height: 370px;
+  min-height: 470px;
+  //border: 10px solid red;
+  box-shadow: -8px 10px 4px -4px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: -8px 10px 4px -4px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -8px 10px 4px -4px rgba(0, 0, 0, 0.75);
   &_heading {
-    background-color: rgb(3, 55, 51);
+    background-color: rgb(88, 57, 106); // rgb(3, 55, 51);
     padding: 20px;
     padding-right: 250px;
-    height: 100px;
+    box-sizing: border-box;
+    //height: 100%;
+    width: 100%;
+    height: 35%;
+    //max-width: 70vw;
     //border: 10px solid blue;
-    overflow-y: hidden;
+    h4,
+    h2 {
+      overflow: hidden;
+      text-wrap: nowrap;
+      text-overflow: ellipsis;
+    }
     @media only screen and (max-width: 400px) {
       padding-right: 20px;
     }
   }
   &_information {
-    background-color: #272c40;
+    background-color: rgb(9, 27, 29); // #272c40;
     padding: 20px;
     overflow-y: scroll;
+    //text-wrap: nowrap;
     padding-right: 250px;
-    min-height: 470px;
-    max-height: calc(60vh - 180px);
+    //min-height: 470px;
+    height: 65%;
+    //max-height: 100px; //calc(50vh - 180px);
     //   min-height: 50vh;
-    text-overflow: clip;
+    //text-overflow: clip;
     // width: 100%;
+    border-top: 1px solid orange;
     scrollbar-width: none;
     @media only screen and (max-width: 800px) {
       padding-right: 20px;
+    }
+    p {
+      padding: 10px;
+      border-bottom: 1px solid rgba(211, 211, 211, 0.2);
     }
   }
   &_image_container {
@@ -53,25 +73,26 @@
   &_container {
     display: flex;
     //border: 10px solid green;
-    max-width: 100%;
-    max-height: 100%;
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
   }
 }
 
 .modal_button {
   background-color: transparent;
-  //  border: 10px solid beige;
   color: white;
-  background-color: rgb(3, 55, 51);
-  align-self: flex-end;
+  //background-color: rgb(3, 55, 51);
   text-align: right;
   z-index: 3;
-  //align-self: flex-end;
   width: calc(100% + 230px);
-  border: none;
   height: fit-content;
   align-self: flex-start;
+  border: none;
   display: inline;
+  font-weight: bold;
   &:hover {
     color: rgb(138, 12, 101);
   }

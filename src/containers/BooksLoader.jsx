@@ -12,12 +12,18 @@ const BooksLoader = ({ searchTerm }) => {
   const [pageNumber, setPageNumber] = useState(0);
   const [numberOfBooksPerPage, setNumberOfBooksPerPage] = useState(10);
   const [numberOfPages, setNumberOfPages] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [totalCount, setTotalCount] = useState(0);
   useEffect(() => {
     if (searchTerm) {
       setNumberOfPages(0);
       setIsError(false);
       setIsLoading(true);
-      fetchBooks(searchTerm, pageNumber, numberOfBooksPerPage)
+      fetchBooks(
+        searchTerm,
+        pageNumber * numberOfBooksPerPage,
+        numberOfBooksPerPage
+      )
         .then((books) => {
           console.log(books.booksList, pageNumber);
           console.log(
@@ -27,7 +33,7 @@ const BooksLoader = ({ searchTerm }) => {
             Math.ceil(books.totalCount / numberOfBooksPerPage)
           );
           console.log("#", pageNumber);
-
+          setTotalCount(books.totalCount);
           setBooksList(books.booksList);
           setNumberOfPages(Math.floor(books.totalCount / numberOfBooksPerPage));
         })
@@ -43,7 +49,8 @@ const BooksLoader = ({ searchTerm }) => {
   }, [searchTerm, pageNumber, numberOfBooksPerPage]);
 
   return (
-    <div className={style.loader}>
+    <div>
+      {/* //className={isLoading || isError ? style.spinner_loader : ""}> */}
       {isError && <ErrorMessage errMsg={errMsg} />}
       {isLoading && <LoadingSpinner />}
       {!isError && !isLoading && booksList && (
@@ -55,6 +62,9 @@ const BooksLoader = ({ searchTerm }) => {
           numberOfPages={numberOfPages}
           setPageNumber={setPageNumber}
           setNumberOfBooksPerPage={setNumberOfBooksPerPage}
+          currentPage={currentPage}
+          setCurrentPage={setCurrentPage}
+          totalNumberOfBooks={totalCount}
         />
       )}
     </div>
