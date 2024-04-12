@@ -32,7 +32,7 @@ const BooksLoader = ({ searchTerm }) => {
             "pages",
             Math.ceil(books.totalCount / numberOfBooksPerPage)
           );
-          console.log("#", pageNumber);
+          console.log("#", pageNumber, "pp", numberOfBooksPerPage);
           setTotalCount(books.totalCount);
           setBooksList(books.booksList);
           setNumberOfPages(Math.floor(books.totalCount / numberOfBooksPerPage));

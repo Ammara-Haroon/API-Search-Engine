@@ -8,7 +8,7 @@ const Title = () => {
   return (
     <div className={style.title}>
       <h1>
-        L<img src={eyes} />k<span>4</span>Book
+        L<img src={eyes} />K<span>4</span>BOOK
       </h1>
       {isLanding && <h4>...lookup for your favourite book online</h4>}
     </div>

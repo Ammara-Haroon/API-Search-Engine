@@ -1,8 +1,14 @@
 import React from "react";
 
-const ResultsSelector = ({ options, selectedValue, onSelect }) => {
+const ResultsSelector = ({
+  options,
+  selectedValue,
+  onSelect,
+  setCurrentPage,
+}) => {
   const handleSelect = (e) => {
-    onSelect(e.target.value);
+    onSelect(Number(e.target.value));
+    setCurrentPage(0);
   };
   return (
     <div>

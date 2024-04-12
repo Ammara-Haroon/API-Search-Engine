@@ -4,7 +4,7 @@
   width: 150px; //128px;
   height: 200px; //168px;
   //border: 1px solid salmon;
-  //perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
   //////
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 600px;
@@ -16,22 +16,41 @@
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.8s;
+    transition: transform 2s;
     transform-style: preserve-3d;
+    //border: 6px solid rebeccapurple;
+    transform-origin: 0 0;
+  }
+  &_base {
+    background-color: aliceblue;
+    color: black;
+    width: 150px;
+    height: 200px;
+    //translate: 10px;
+    //border: 6px solid rebeccapurple;
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+    margin: 0;
+    box-sizing: border-box;
+    border-left: 5px ridge grey;
+
+    overflow-y: scroll;
+    color: black;
+    scrollbar-width: none;
+    text-align: end;
+    direction: rtl;
   }
 
   /* Do an horizontal flip when you move the mouse over the flip box container */
+
   &:hover .flip_card_inner {
-    transform-origin: 0 0;
-    //transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+    transform-origin: 0% 100%;
   }
 
   /* Position the front and back side */
   &_front,
-  &_back {
+  &_base {
     position: absolute;
-    width: 100%;
-    height: 100%;
     -webkit-backface-visibility: hidden; /* Safari */
     backface-visibility: hidden;
   }
@@ -43,6 +62,10 @@
     box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
     border-radius: 0.01em;
     overflow: clip;
+    //border: 1px solid red;
+    width: 100%;
+    height: 100%;
+
     img {
       width: 100%;
       height: 100%;
@@ -52,39 +75,28 @@
       //object-fit: contain;
     }
   }
-
-  /* Style the back side */
-  &_back {
-    transform: rotateY(-180deg);
-    //background-color: dodgerblue;
-  }
 }
 .description {
-  color: white;
   font-size: x-small;
-  //overflow-y: hidden;
-  overflow-y: scroll;
-  scrollbar-width: none;
-  text-align: end;
-  direction: rtl;
-  padding: 0 10px 0 4px;
-  border-left-style: ridge;
-  display: flex;
-  max-height: 100%;
+  color: black;
+  padding: 5px 10px 5px 4px;
+  // border-left: 5px ridge grey;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
 }
 .card {
-  //box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  //max-width: 300px;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
-  //justify-content: space-between;
+  padding: 5px;
   //border: 1px solid red;
   &:hover {
-    color: rgba(0, 128, 0, 0.4);
+    color: green; //rgba(0, 128, 0, 0.4);
+    cursor: zoom-in;
   }
   .book {
     margin: 10px;

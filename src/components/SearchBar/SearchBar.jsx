@@ -23,7 +23,12 @@ const SearchBar = ({ searchForBooks }) => {
 
   return (
     <form className={barStyleClass} onSubmit={handleSubmit}>
-      <input type="text" name="search_input" placeholder="Search for book" />
+      <input
+        type="text"
+        name="search_input"
+        placeholder="Search for book"
+        autoComplete="off"
+      />
       <button>
         <FontAwesomeIcon icon={faSearch} color="green" />
       </button>

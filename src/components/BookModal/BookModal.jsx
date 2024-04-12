@@ -12,8 +12,6 @@ const BookModal = ({ book, setOpenModal }) => {
           />
         </div>
         <div className={style.modal_container}>
-          {/* <div>
-            <div> */}
           <div className={style.modal_heading}>
             <button
               className={style.modal_button}
@@ -21,9 +19,11 @@ const BookModal = ({ book, setOpenModal }) => {
             >
               X
             </button>
-            {book.authors && <h4>{book.authors.join("  ")}</h4>}
-            <h2>{book.title}</h2>
-            {book.subtitle && <h6>{book.subtitle}</h6>}
+            <div>
+              {book.authors && <h4>{book.authors.join("  ")}</h4>}
+              <h2>{book.title}</h2>
+              {book.subtitle && <h6>{book.subtitle}</h6>}
+            </div>
           </div>
           <div className={style.modal_information}>
             {book.description && <p>{book.description}</p>}
@@ -38,8 +38,6 @@ const BookModal = ({ book, setOpenModal }) => {
               </a>
             )}
           </div>
-          {/* </div>
-          </div> */}
         </div>
       </div>
     </>

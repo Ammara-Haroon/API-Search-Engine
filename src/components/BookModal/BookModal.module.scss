@@ -66,8 +66,10 @@
   &_image {
     width: 200px;
     height: 300px;
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
     @media only screen and (max-width: 800px) {
-      display: none;
+      width: 70px;
+      height: 90px;
     }
   }
   &_container {
