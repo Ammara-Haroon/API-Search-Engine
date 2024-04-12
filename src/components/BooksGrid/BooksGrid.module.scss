@@ -1,14 +1,16 @@
 .grid {
-  @media only screen and (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill, 224px);
-  }
+  // @media only screen and (min-width: 768px) {
+  //   grid-template-columns: repeat(auto-fill, 224px);
+  // }
 
   display: grid;
   grid-template-columns: repeat(auto-fill, 180px);
   //grid-gap: 16px 8px;
-  gap: 16px 8px;
-  //justify-content: space-between;
+  gap: 16px 16px;
+  justify-content: center;
+
   margin: 0;
+  width: 100%;
 }
 .container {
   h3 {

@@ -3,15 +3,25 @@
   //color:yellow;
   h1 {
     margin: 0;
+    @media only screen and (max-width: 460px) {
+      text-align: center;
+    }
   }
   h4 {
     padding-left: 100px;
     color: grey;
+    @media only screen and (max-width: 460px) {
+      padding-left: 0;
+      text-wrap: pretty;
+      text-align: center;
+      // color: red;
+    }
   }
   img {
-    height: 1em;
+    height: 0.8em;
     width: 1.5em;
   }
+  padding-left: 0;
   span {
     color: green;
     //color: rgba(3, 55, 51, 1);
