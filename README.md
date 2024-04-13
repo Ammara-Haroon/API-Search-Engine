@@ -84,7 +84,7 @@ The extra information is displayed in a modal which is also responsive.
 
 #### Pagination
 
-The application displays information on how manny books are displayed and allows the user to select page number and number of books to display on each page.
+The application displays information on how many books are displayed and allows the user to select page number and number of books to display on each page.
 
 #### Error Page
 
