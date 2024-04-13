@@ -82,6 +82,10 @@ The books are displayed as a book cover and when a user hovers over them the tit
 The extra information is displayed in a modal which is also responsive.
 ![book modal](image-2.png)
 
+#### Pagination
+
+The application displays information on how manny books are displayed and allows the user to select page number and number of books to display on each page.
+
 #### Error Page
 
 A customised error message is displayed when something goes wrong.
