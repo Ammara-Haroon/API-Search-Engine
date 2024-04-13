@@ -13,17 +13,17 @@ const PageSelector = ({
   }
 
   const moveFwd = () => {
+    fetchPage(currentPage + 1);
     setCurrentPage(currentPage + 1);
-    fetchPage(currentPage);
   };
 
   const selectPage = (pg) => {
-    setCurrentPage(pg);
     fetchPage(pg);
+    setCurrentPage(pg);
   };
   const moveBkwd = () => {
+    fetchPage(currentPage - 1);
     setCurrentPage(currentPage - 1);
-    fetchPage(currentPage);
   };
   return (
     <div className={style.wrapper}>
@@ -34,7 +34,7 @@ const PageSelector = ({
         <ol className={style.paging}>
           {!isFirst ? (
             <li key={1} onClick={() => selectPage(0)}>
-              1 ...
+              1 {currentPage > 1 && "..."}
             </li>
           ) : null}
           {pages.map((page) => (

@@ -31,7 +31,6 @@ const BookCard = ({ book }) => {
         </div>
         <h3 className={style.book}>{book.title}</h3>
         <small className={style.author}>{book.authors.join(", ")}</small>
-        <p>{/* <button>Add to Cart</button> */}</p>
       </div>
       {openModal && <BookModal book={book} setOpenModal={setOpenModal} />}
     </>
