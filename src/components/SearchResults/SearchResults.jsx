@@ -11,13 +11,15 @@ const SearchResults = ({
   setNumberOfBooksPerPage,
   totalNumberOfBooks,
   numberOfPages,
-  setPageNumber,
   currentPage,
   setCurrentPage,
 }) => {
   const startIndex = 1 + currentPage * numberOfBooksPerPage;
-  const endIndex = startIndex + numberOfBooksPerPage - 1;
-  console.log(startIndex, endIndex, numberOfBooksPerPage);
+  const endIndex =
+    startIndex + numberOfBooksPerPage - 1 < totalNumberOfBooks
+      ? startIndex + numberOfBooksPerPage - 1
+      : totalNumberOfBooks;
+  console.log(startIndex, endIndex, numberOfBooksPerPage, numberOfPages);
   return (
     <div className={style.results}>
       <PagingInformation
@@ -31,9 +33,8 @@ const SearchResults = ({
       <BooksGrid booksList={booksList} searchTerm={searchTerm} />
       <PageSelector
         currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
         numberOfPages={numberOfPages}
-        fetchPage={setPageNumber}
+        fetchPage={setCurrentPage}
       />
     </div>
   );

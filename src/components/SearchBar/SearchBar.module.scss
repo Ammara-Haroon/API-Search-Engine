@@ -28,9 +28,17 @@
   button {
     border: none;
     background-color: transparent;
+    padding: 3px;
+    cursor: pointer;
+  }
+  p {
+    border: none;
+    background-color: transparent;
     color: darkgrey;
     font-weight: bold;
     font-size: large;
     padding: 3px;
+    display: inline;
+    cursor: pointer;
   }
 }

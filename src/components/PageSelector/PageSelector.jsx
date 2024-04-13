@@ -1,29 +1,27 @@
 import React from "react";
 import style from "./PageSelector.module.scss";
-const PageSelector = ({
-  numberOfPages = 10,
-  fetchPage,
-  currentPage,
-  setCurrentPage,
-}) => {
+const PageSelector = ({ numberOfPages = 10, fetchPage, currentPage }) => {
   const pages = [];
-  const isFirst = currentPage === 0;
-  for (let i = currentPage; i < currentPage + 5 && i < numberOfPages; ++i) {
+  console.log("total", numberOfPages, "curr", currentPage);
+  const isFirst = currentPage === 0 || numberOfPages < 5;
+
+  for (
+    let i = isFirst ? 0 : currentPage;
+    i < currentPage + 5 && i < numberOfPages;
+    ++i
+  ) {
     pages.push(i);
   }
 
   const moveFwd = () => {
     fetchPage(currentPage + 1);
-    setCurrentPage(currentPage + 1);
   };
 
   const selectPage = (pg) => {
     fetchPage(pg);
-    setCurrentPage(pg);
   };
   const moveBkwd = () => {
     fetchPage(currentPage - 1);
-    setCurrentPage(currentPage - 1);
   };
   return (
     <div className={style.wrapper}>

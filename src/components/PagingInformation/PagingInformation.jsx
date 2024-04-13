@@ -8,8 +8,9 @@ const PagingInformation = ({
   totalNumberOfBooks,
   numberOfBooksPerPage,
   setNumberOfBooksPerPage,
+  setCurrentPage,
 }) => {
-  console.log("in paging", startIndex, endIndex);
+  //console.log("in paging", startIndex, endIndex);
   return (
     <div className={style.paging_info}>
       <p>
@@ -19,6 +20,7 @@ const PagingInformation = ({
         options={[10, 20, 30, 40]}
         onSelect={setNumberOfBooksPerPage}
         selectedValue={numberOfBooksPerPage}
+        setCurrentPage={setCurrentPage}
       />
     </div>
   );

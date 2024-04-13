@@ -35,7 +35,7 @@ const SearchBar = ({ searchForBooks }) => {
         autoComplete="off"
         ref={inputRef}
       />
-      <button onClick={handleClear}>X</button>
+      <p onClick={handleClear}>X</p>
       <button>
         <FontAwesomeIcon icon={faSearch} color="green" />
       </button>
