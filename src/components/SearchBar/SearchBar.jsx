@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useRef } from "react";
 import style from "./SearchBar.module.scss";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,7 +11,7 @@ const SearchBar = ({ searchForBooks }) => {
   const barStyleClass =
     `${style.bar}` +
     (isLanding ? ` ${style.bar_landing}` : ` ${style.bar_searching}`);
-  console.log(barStyleClass);
+  //console.log(barStyleClass);
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLanding(false);
@@ -20,7 +20,12 @@ const SearchBar = ({ searchForBooks }) => {
     searchForBooks(form.get("search_input"));
     e.target.reset();
   };
-
+  const inputRef = useRef(null);
+  const handleClear = (e) => {
+    console.log("clicked X", inputRef);
+    e.preventDefault();
+    inputRef.current.value = "";
+  };
   return (
     <form className={barStyleClass} onSubmit={handleSubmit}>
       <input
@@ -28,7 +33,9 @@ const SearchBar = ({ searchForBooks }) => {
         name="search_input"
         placeholder="Search for book"
         autoComplete="off"
+        ref={inputRef}
       />
+      <button onClick={handleClear}>X</button>
       <button>
         <FontAwesomeIcon icon={faSearch} color="green" />
       </button>
