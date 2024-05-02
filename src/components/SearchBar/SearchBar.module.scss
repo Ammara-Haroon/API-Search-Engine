@@ -1,0 +1,44 @@
+.bar {
+  border-radius: 25px;
+  border: 3px solid green;
+  padding: 5px;
+  margin: 20px;
+  &_landing {
+    width: 100%;
+  }
+  &_searching {
+    min-width: 30%;
+  }
+  input {
+    border: none;
+    background-color: none;
+    width: calc(100% - 45px);
+    outline: none;
+    background: none;
+    color: beige;
+
+    &:placeholder-shown {
+      font-style: italic;
+    }
+    &:focus,
+    &:active {
+      background: transparent;
+    }
+  }
+  button {
+    border: none;
+    background-color: transparent;
+    padding: 3px;
+    cursor: pointer;
+  }
+  p {
+    border: none;
+    background-color: transparent;
+    color: darkgrey;
+    font-weight: bold;
+    font-size: large;
+    padding: 3px;
+    display: inline;
+    cursor: pointer;
+  }
+}

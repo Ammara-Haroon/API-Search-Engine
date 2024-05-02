@@ -1,0 +1,9 @@
+.paging_info {
+  display: flex;
+  justify-content: space-between;
+  color: grey;
+  @media only screen and (max-width: 580px) {
+    flex-direction: column;
+    gap: 15px;
+  }
+}

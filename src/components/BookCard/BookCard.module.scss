@@ -1,0 +1,124 @@
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip_card {
+  background-color: transparent;
+  width: 150px; //128px;
+  height: 200px; //168px;
+  //border: 1px solid salmon;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  //////
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+
+  &_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    //border: 6px solid rebeccapurple;
+    transform-origin: 0 0;
+  }
+  &_base {
+    background-color: aliceblue;
+    color: black;
+    width: 150px;
+    height: 200px;
+    //translate: 10px;
+    //border: 6px solid rebeccapurple;
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+    margin: 0;
+    box-sizing: border-box;
+    border-left: 5px ridge grey;
+
+    overflow-y: scroll;
+    color: black;
+    scrollbar-width: none;
+    text-align: end;
+    direction: rtl;
+  }
+
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+
+  &:hover .flip_card_inner {
+    transform: rotateY(-180deg);
+    transform-origin: 0% 100%;
+  }
+
+  /* Position the front and back side */
+  &_front,
+  &_base {
+    position: absolute;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+
+  /* Style the front side (fallback if image is missing) */
+  &_front {
+    background-color: #595b69;
+    color: #595b69;
+    box-shadow: 10px 10px 0px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 0.01em;
+    overflow: clip;
+    //border: 1px solid red;
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      //min-width: 128px;
+      //min-height: 168px;
+
+      //object-fit: contain;
+    }
+  }
+}
+.description {
+  font-size: x-small;
+  color: black;
+  padding: 5px 10px 5px 4px;
+  // border-left: 5px ridge grey;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+}
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3);
+  padding: 5px;
+  //border: 1px solid red;
+  &:hover {
+    color: green; //rgba(0, 128, 0, 0.4);
+    cursor: zoom-in;
+  }
+  .book {
+    margin: 10px;
+    //border: 1px solid green;
+    align-self: center;
+    font-weight: bold;
+    padding: 0px;
+    margin-bottom: 3px;
+  }
+  .author {
+    //border: 1px solid blue;
+    margin: 0;
+  }
+}
+.arrows {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  // border: 1px solid red;
+  height: 100%;
+  //height: 100%;
+}

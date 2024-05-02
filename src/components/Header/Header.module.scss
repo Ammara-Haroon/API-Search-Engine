@@ -1,0 +1,25 @@
+.header_landing {
+  display: flex;
+  flex-direction: column;
+  //border: 1px solid green;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+}
+
+.header_searching {
+  //border: 1px solid red;
+  background: transparent;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+  background-image: linear-gradient(
+    to bottom,
+    rgba(3, 55, 51, 1),
+    rgba(145, 10, 103, 1)
+  );
+  width: 100%;
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
+}
