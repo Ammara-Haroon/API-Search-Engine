@@ -1,5 +1,5 @@
 # API Search Engine
-
+https://ammara-haroon.github.io/API-Search-Engine/
 ## Project Description
 
 The goal of this project is to provide a search interface to the user for a book inside the Google Books database and to get details about a book title.
@@ -10,7 +10,7 @@ The goal of this project is to provide a search interface to the user for a book
 - A page with a header and introduction that allows users to search for books
 - A form containing a text input and a submit / search button
 - A gird/ flexbox to display search results
-- Results retrived by API request to Google books API using the input value as query string
+- Results retrieved by API request to Google books API using the input value as query string
 - Each book in the grid should have an image, author, title and description
 - The grid should be responsive on different screen sizes
 - A services file for requesting the data.
@@ -33,7 +33,7 @@ Implemeneted as single page application that used different styling options for 
 
 ### Tools Used:
 
-- React
+- React JS
 - SASS
 
 ### Code Structure:
