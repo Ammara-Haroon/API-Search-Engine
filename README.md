@@ -21,7 +21,7 @@ The goal of this project is to provide a search interface to the user for a book
 
 ### Design and Styling:
 
-Implemeneted as single page application that used different styling options for when the user first lands on the page and when search results are displayed. When search results are displayed the header moves to the top of the page.
+Implemented as single page application that used different styling options for when the user first lands on the page and when search results are displayed. When search results are displayed the header moves to the top of the page.
 
 #### Landing Page
 
@@ -38,7 +38,7 @@ Implemeneted as single page application that used different styling options for 
 
 ### Code Structure:
 
-The code is distributed in components,services and containers modules to separate logic from view.
+The code is distributed in components, services and containers modules to separate logic from view.
 
 #### Functional Components and Containers
 
@@ -60,8 +60,7 @@ The following is the list of React functional components:
 
 #### services
 
-Data services make api calls to Google API to fetch data.It
-uses fetch, async and await.
+Data services make api calls to Google API to fetch data.It uses fetch, async and await.
 
 #### container
 
