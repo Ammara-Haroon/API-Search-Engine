@@ -1,14 +1,25 @@
-.bar {
-  border-radius: 25px;
-  border: 3px solid green;
-  padding: 5px;
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  color: lightblue;
   margin: 20px;
-  &_landing {
+  
+  .message{
+    text-align: center;
+  }
+ &_landing {
     width: 100%;
   }
   &_searching {
     min-width: 30%;
+      
   }
+}
+.bar {
+  border-radius: 25px;
+  border: 3px solid green;
+  padding: 5px;
+ 
   input {
     border: none;
     background-color: none;
@@ -41,4 +52,7 @@
     display: inline;
     cursor: pointer;
   }
+
+
 }
+

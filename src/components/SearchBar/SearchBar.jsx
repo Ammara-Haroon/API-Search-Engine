@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from "react";
+import React, { useContext, useRef, useState } from "react";
 import style from "./SearchBar.module.scss";
 import ReactDOM from "react-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,40 +7,70 @@ import { SearchingContext } from "../Context/SearchingContext";
 //const element = ReactDOM.render(element, document.body);
 const SearchBar = ({ searchForBooks }) => {
   const { isLanding, setIsLanding } = useContext(SearchingContext);
+  const [isInputEmpty,setIsInputEmpty] = useState(true);
+  //const inputRef = useRef(null);
+  const [searchInput,setSearchInput] = useState("");
+  const [displayMsg,setDisplayMsg] = useState();
 
-  const barStyleClass =
-    `${style.bar}` +
-    (isLanding ? ` ${style.bar_landing}` : ` ${style.bar_searching}`);
-  //console.log(barStyleClass);
+  const handleChange = (e)=>{
+    setSearchInput(e.target.value);
+    if(isInputEmpty && e.target.value != ""){
+      setIsInputEmpty(false);
+    }else if(!isInputEmpty && e.target.value  == ""){
+      setIsInputEmpty(true);
+    }
+    setDisplayMsg("");
+  }
+  const wrapperStyleClass =
+    `${style.wrapper}` +
+    (isLanding ? ` ${style.wrapper_landing}` : ` ${style.wrapper_searching}`);
+  
+  // const barStyleClass =
+  //   `${style.bar}` +
+  //   (isLanding ? ` ${style.bar_landing}` : ` ${style.bar_searching}`);
+  
+  const crossStyle = (isInputEmpty ? {color:"transparent"} : {color:"darkgrey"});
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsLanding(false);
     const form = new FormData(e.target);
-    console.log("searching for " + form.get("search_input"));
+    if(form.get("search_input") != ""){
     searchForBooks(form.get("search_input"));
-    e.target.reset();
+    setIsLanding(false);
+    setSearchInput("");
+    setIsInputEmpty(true);
+    console.log("searching for " + form.get("search_input"));
+    setDisplayMsg("");
+    }else{
+      setDisplayMsg("Need to enter a search term !");
+    }
   };
-  const inputRef = useRef(null);
   const handleClear = (e) => {
-    console.log("clicked X", inputRef);
+    console.log("clicked X");
     e.preventDefault();
-    inputRef.current.value = "";
+    setSearchInput("");
+    setIsInputEmpty(true);
+    setDisplayMsg("");
+
   };
-  return (
-    <form className={barStyleClass} onSubmit={handleSubmit}>
+  return <div className={wrapperStyleClass}>
+    <form className={style.bar}  onSubmit={handleSubmit}>
       <input
         type="text"
         name="search_input"
         placeholder="Search for book"
         autoComplete="off"
-        ref={inputRef}
+        onInput={handleChange}
+        value={searchInput}
       />
-      <p onClick={handleClear}>X</p>
+      <p style={crossStyle} onClick={handleClear}>X</p>    
       <button>
         <FontAwesomeIcon icon={faSearch} color="green" />
-      </button>
+      </button>    
     </form>
-  );
+     <small className={style.message}>&#8203;{displayMsg}</small> 
+      </div>;
+  
 };
 
 export default SearchBar;
