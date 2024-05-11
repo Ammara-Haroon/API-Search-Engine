@@ -1,14 +1,14 @@
 import React from "react";
 import style from "./BookModal.module.scss";
-const BookModal = ({ book, setOpenModal }) => {
+const BookModal = ({ book, handleClose }) => {
   return (
-    <>
+    <div className={style.overlay}>
       <div className={style.modal}>
         <div className={style.modal_container}>
           <div className={style.modal_heading}>
             <button
               className={style.modal_button}
-              onClick={() => setOpenModal(false)}
+              onClick={handleClose}
             >
               X
             </button>
@@ -45,7 +45,7 @@ const BookModal = ({ book, setOpenModal }) => {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

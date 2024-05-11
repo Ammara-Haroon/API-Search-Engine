@@ -6,6 +6,7 @@ import style from "./App.module.scss";
 import SearchingContextProvider, {
   SearchingContext,
 } from "./components/Context/SearchingContext";
+
 function App() {
   const [searchTerm, setSearchTerm] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
@@ -21,7 +22,7 @@ function App() {
   //console.log(pageStyleClass);
   return (
     <>
-      <section className={pageStyleClass}>
+      <section style={{overflow:"hidden"}} className={pageStyleClass}>
         <div className={style.wrapper}>
           <SearchingContextProvider>
             <Header updateSearchTerm={updateSearchTerm} />

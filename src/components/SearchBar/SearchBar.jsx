@@ -34,7 +34,7 @@ const SearchBar = ({ searchForBooks }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
-    if(form.get("search_input") != ""){
+    if(form.get("search_input").trim() != ""){
     searchForBooks(form.get("search_input"));
     setIsLanding(false);
     setSearchInput("");
@@ -43,6 +43,8 @@ const SearchBar = ({ searchForBooks }) => {
     setDisplayMsg("");
     }else{
       setDisplayMsg("Need to enter a search term !");
+      setSearchInput("");
+
     }
   };
   const handleClear = (e) => {

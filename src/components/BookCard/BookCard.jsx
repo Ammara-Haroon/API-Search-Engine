@@ -4,9 +4,17 @@ import BookModal from "../BookModal/BookModal";
 import imageNotFound from "../../assets/image-not-found-icon.png";
 const BookCard = ({ book }) => {
   const [openModal, setOpenModal] = useState(false);
+  const handleOpenModal = () => {
+    document.body.style.overflow = 'hidden';
+    setOpenModal(true);
+  }
+  const handleCloseModal = () => {
+    document.body.style.overflow = 'visible';
+    setOpenModal(false);
+  }
   return (
     <>
-      <div className={style.card} onClick={() => setOpenModal(true)}>
+      <div className={style.card} onClick={handleOpenModal}>
         <div className={style.flip_card}>
           <div className={style.flip_card_base}>
             <div className={style.description}>
@@ -32,7 +40,7 @@ const BookCard = ({ book }) => {
         <h3 className={style.book}>{book.title}</h3>
         <small className={style.author}>{book.authors.join(", ")}</small>
       </div>
-      {openModal && <BookModal book={book} setOpenModal={setOpenModal} />}
+      {openModal && <BookModal book={book} handleClose={handleCloseModal} />}
     </>
   );
 };
