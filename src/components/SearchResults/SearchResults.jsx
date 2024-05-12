@@ -19,7 +19,6 @@ const SearchResults = ({
     startIndex + numberOfBooksPerPage - 1 < totalNumberOfBooks
       ? startIndex + numberOfBooksPerPage - 1
       : totalNumberOfBooks;
-  console.log(startIndex, endIndex, numberOfBooksPerPage, numberOfPages);
   return (
     <div className={style.results}>
       <PagingInformation

@@ -25,20 +25,17 @@
 }
 .wrapper {
   display: flex;
-  //border: 2px solid blue;
   justify-content: center;
   align-items: center;
 }
 .page_nav {
   display: flex;
   align-items: center;
-  //justify-content: center;
   background-color: #fff;
   border-radius: 100px;
   box-shadow: 0 2px 4px #3a474e26;
   height: calc(2em + 10px);
   flex-direction: row;
-  //border: 5px solid red;
   color: black;
   width: fit-content;
   margin: 20px;

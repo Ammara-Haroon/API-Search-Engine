@@ -39,7 +39,6 @@ const SearchBar = ({ searchForBooks }) => {
     setIsLanding(false);
     setSearchInput("");
     setIsInputEmpty(true);
-    console.log("searching for " + form.get("search_input"));
     setDisplayMsg("");
     }else{
       setDisplayMsg("Need to enter a search term !");
@@ -48,12 +47,10 @@ const SearchBar = ({ searchForBooks }) => {
     }
   };
   const handleClear = (e) => {
-    console.log("clicked X");
     e.preventDefault();
     setSearchInput("");
     setIsInputEmpty(true);
     setDisplayMsg("");
-
   };
   return <div className={wrapperStyleClass}>
     <form className={style.bar}  onSubmit={handleSubmit}>
@@ -66,7 +63,7 @@ const SearchBar = ({ searchForBooks }) => {
         value={searchInput}
       />
       <p style={crossStyle} onClick={handleClear}>X</p>    
-      <button>
+      <button type="submit">
         <FontAwesomeIcon icon={faSearch} color="green" />
       </button>    
     </form>

@@ -37,7 +37,7 @@ export const fetchBooks = async (
       value: maxResults,
     },
   ]);
-  console.log("fetching from", startIndex, maxResults);
+  //console.log("fetching from", startIndex, maxResults);
   if (data.totalItems === 0) {
     throw new Error(`No books found for '${searchTerm}'`);
   }
@@ -58,6 +58,6 @@ export const fetchBooks = async (
     previewLink: vol.volumeInfo.previewLink,
   }));
 
-  console.log("cleanData", cleanedData);
+  //console.log("cleanData", cleanedData);
   return { totalCount: data.totalItems, booksList: cleanedData };
 };

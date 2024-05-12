@@ -14,7 +14,6 @@ const BooksLoader = ({ searchTerm, currentPage, setCurrentPage }) => {
   const [totalCount, setTotalCount] = useState(0);
   useEffect(() => {
     if (searchTerm) {
-      //setNumberOfPages(0);
       setIsError(false);
       setIsLoading(true);
       fetchBooks(
@@ -23,16 +22,6 @@ const BooksLoader = ({ searchTerm, currentPage, setCurrentPage }) => {
         numberOfBooksPerPage
       )
         .then((books) => {
-          console.log(books.booksList, currentPage);
-          console.log(
-            "total",
-            books.totalCount,
-            "pages",
-            Math.ceil(books.totalCount / numberOfBooksPerPage),
-            "#",
-            currentPage
-          );
-          //console.log("#", pageNumber, "pp", numberOfBooksPerPage);
           setTotalCount(books.totalCount);
           setBooksList(books.booksList);
           if (currentPage === 0) {

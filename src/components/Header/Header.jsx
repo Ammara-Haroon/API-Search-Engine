@@ -8,7 +8,6 @@ const Header = ({ updateSearchTerm }) => {
   const headerStyleClass = isLanding
     ? `${style.header_landing}`
     : `${style.header_searching}`;
-  //console.log(headerStyleClass);
   return (
     <div className={headerStyleClass}>
       <Title />

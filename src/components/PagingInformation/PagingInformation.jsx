@@ -10,7 +10,6 @@ const PagingInformation = ({
   setNumberOfBooksPerPage,
   setCurrentPage,
 }) => {
-  //console.log("in paging", startIndex, endIndex);
   return (
     <div className={style.paging_info}>
       <p>

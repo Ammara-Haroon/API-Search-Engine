@@ -1,6 +1,5 @@
 .title {
   color: #ffe4fc;
-  //color:yellow;
   h1 {
     margin: 0;
     @media only screen and (max-width: 460px) {
@@ -14,7 +13,6 @@
       padding-left: 0;
       text-wrap: pretty;
       text-align: center;
-      // color: red;
     }
   }
   img {
@@ -24,8 +22,6 @@
   padding-left: 0;
   span {
     color: green;
-    //color: rgba(3, 55, 51, 1);
     font-size: xxx-large;
-    //font-family: cursive;
   }
 }

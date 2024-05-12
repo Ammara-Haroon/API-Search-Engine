@@ -2,7 +2,6 @@ import React from "react";
 import style from "./PageSelector.module.scss";
 const PageSelector = ({ numberOfPages = 10, fetchPage, currentPage }) => {
   const pages = [];
-  console.log("total", numberOfPages, "curr", currentPage);
   const isFirst = currentPage === 0 || numberOfPages < 5;
 
   for (

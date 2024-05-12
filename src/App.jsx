@@ -12,14 +12,12 @@ function App() {
   const [currentPage, setCurrentPage] = useState(0);
 
   const updateSearchTerm = (searchTerm) => {
-    console.log("back to page 0", searchTerm);
     setCurrentPage(0);
     setSearchTerm(searchTerm);
   };
   const pageStyleClass =
     `${style.section}` +
     (searchTerm ? ` ${style.section_searching}` : ` ${style.section_landing}`);
-  //console.log(pageStyleClass);
   return (
     <>
       <section style={{overflow:"hidden"}} className={pageStyleClass}>

@@ -13,7 +13,7 @@ const ResultsSelector = ({
   return (
     <div>
       <label htmlFor="resultsSelector">Results Per Page : </label>
-      <select
+      <select id="resultsSelector"
         style={{ backgroundColor: "light-grey", color: "black" }}
         onChange={handleSelect}
         value={selectedValue}
