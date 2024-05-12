@@ -6,7 +6,6 @@ import style from "./BooksLoader.module.scss";
 import SearchResults from "../components/SearchResults/SearchResults";
 const BooksLoader = ({ searchTerm, currentPage, setCurrentPage }) => {
   const [isLoading, setIsLoading] = useState(false);
-  const [isError, setIsError] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const [booksList, setBooksList] = useState(null);
   const [numberOfBooksPerPage, setNumberOfBooksPerPage] = useState(10);
@@ -14,7 +13,7 @@ const BooksLoader = ({ searchTerm, currentPage, setCurrentPage }) => {
   const [totalCount, setTotalCount] = useState(0);
   useEffect(() => {
     if (searchTerm) {
-      setIsError(false);
+      setErrMsg(null);
       setIsLoading(true);
       fetchBooks(
         searchTerm,
@@ -31,7 +30,6 @@ const BooksLoader = ({ searchTerm, currentPage, setCurrentPage }) => {
           }
         })
         .catch((err) => {
-          setIsError(true);
           setErrMsg(err.message);
           setCurrentPage(0);
         })
@@ -43,9 +41,9 @@ const BooksLoader = ({ searchTerm, currentPage, setCurrentPage }) => {
 
   return (
     <div>
-      {isError && <ErrorMessage errMsg={errMsg} />}
+      {errMsg && <ErrorMessage errMsg={errMsg} />}
       {isLoading && <LoadingSpinner />}
-      {!isError && !isLoading && booksList && (
+      {!errMsg && !isLoading && booksList && (
         <SearchResults
           searchTerm={searchTerm}
           booksList={booksList}
