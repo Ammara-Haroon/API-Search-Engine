@@ -10,6 +10,12 @@ https://ammara-haroon.github.io/API-Search-Engine/
 
 ![search results](image-1.png)
 
+#### Book Modal
+![book modal](image-2.png)
+
+#### Error Page
+![alt text](image-3.png)
+
 ## Project Description
 
 The goal of this project is to provide a search interface to the user for a book inside the Google Books database and to get details about a book title.
@@ -81,7 +87,6 @@ The books are displayed as a book cover and when a user hovers over them the tit
 #### Book modal
 
 The extra information is displayed in a modal which is also responsive.
-![book modal](image-2.png)
 
 #### Pagination
 
@@ -90,7 +95,6 @@ The application displays information on how many books are displayed and allows 
 #### Error Page
 
 A customised error message is displayed when something goes wrong.
-![alt text](image-3.png)
 
 #### Loading Spinner
 
