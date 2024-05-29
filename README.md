@@ -1,5 +1,15 @@
 # API Search Engine
 https://ammara-haroon.github.io/API-Search-Engine/
+
+## Demo & Snippets
+#### Landing Page
+
+![landing page](image.png)
+
+#### Search Results
+
+![search results](image-1.png)
+
 ## Project Description
 
 The goal of this project is to provide a search interface to the user for a book inside the Google Books database and to get details about a book title.
@@ -22,14 +32,6 @@ The goal of this project is to provide a search interface to the user for a book
 ### Design and Styling:
 
 Implemented as single page application that used different styling options for when the user first lands on the page and when search results are displayed. When search results are displayed the header moves to the top of the page.
-
-#### Landing Page
-
-![landing page](image.png)
-
-#### Search Results
-
-![search results](image-1.png)
 
 ### Tools Used:
 
@@ -97,4 +99,19 @@ A loading spinner is displayed while results are being fetched.
 ## Future Direction
 
 - Advanced search for authors, language etc. can be added.
-- Sorting option based on titles , authors etc. can be added.
+- Sorting option based on titles, authors etc. can be added.
+
+## Change logs
+
+### 09/04/2024 - Basic App Structure, styling and API calls setup
+
+### 11/04/2024 - Added a modal for displaying book information
+
+### 13/04/2024 - Added media queries and added cross button to remove test in search bar
+
+### 14/04/2024 - Fixed Pagination
+
+### 11/05/2024 - Added overaly to modal and added info message and interaction for empty string search
+
+## Challenges
+-   Adding a flipping page animation and fixing it to rotate along the spine of each book was a challenge as it required understanding transitions and rotations in CSS.
